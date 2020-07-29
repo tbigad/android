@@ -25,14 +25,11 @@ public class MainActivity extends AppCompatActivity {
      * which is packaged with this application.
      */
 
-    public native String stringFibonachiFromJNI(String number);
+    public static native String stringFibonachiFromJNI(String number);
 
     public void btnClick(View view) {
         TextView tv = (TextView) findViewById(R.id.sample_text);
-
         EditText et = (EditText)findViewById(R.id.editNumber);
-
-
         String strCatName = et.getText().toString();
         String result = stringFibonachiFromJNI(strCatName);
         tv.setText(result);
